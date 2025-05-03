@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}Maximos' Invitation{% endblock %}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% block meta_description %}A special invitation{% endblock %}">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-color: #4a6fa5;
+      --secondary-color: #ff85a2;
+      --accent-color: #ffd166;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+
+    body, h1, h2, h3, h4, h5 {
+      font-family: "Raleway", sans-serif;
+      color: var(--dark-color);
+    }
+
+    body, html {
+      height: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+      scroll-behavior: smooth;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .bgimg, .bgimg2 {
+      min-height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .w3-display-container {
+      position: relative;
+    }
+
+    .w3-display-middle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .text-shadow {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn {
+      transition: all 0.3s ease;
+      border-radius: 25px;
+      padding: 10px 25px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .bgimg, .bgimg2 {
+        background-attachment: scroll;
+      }
+
+      .w3-display-middle {
+        width: 90%;
+      }
+    }
+  </style>
+
+  {% block extra_css %}{% endblock %}
+</head>
+<body class="w3-light-grey">
+
+  <!-- Header -->
+  {% block header %}{% endblock %}
+
+  <!-- Navbar (sticky bottom) -->
+  {% block navbar %}{% endblock %}
+
+  <!-- Main Content -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  {% block footer %}{% endblock %}
+
+  <!-- JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    // Initialize lazy loading
+    var lazyLoadInstance = new LazyLoad({
+      elements_selector: ".lazy"
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView
