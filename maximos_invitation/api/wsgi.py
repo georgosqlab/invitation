@@ -1,9 +1,11 @@
 from maximos_invitation.wsgi import application
 
+
 def app(environ, start_response):
-    path = environ["PATH_INFO"]
-    if path.startswith("/static/"):
-        # Let Vercel handle static files
+    # Special handling for static files if needed
+    if environ["PATH_INFO"].startswith("/static/"):
         start_response("404 Not Found", [])
         return []
+
+    # Pass all other requests to Django
     return application(environ, start_response)

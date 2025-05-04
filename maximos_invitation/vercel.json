@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "maximos_invitation/wsgi.py",
+      "src": "api/wsgi.py",
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "50mb",
@@ -16,8 +16,8 @@
       "dest": "/static/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "maximos_invitation/wsgi.py"
+      "src": "/.*",
+      "dest": "api/wsgi.py"
     }
   ]
 }
