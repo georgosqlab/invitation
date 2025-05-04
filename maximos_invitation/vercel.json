@@ -2,14 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/index.py",
-      "use": "@vercel/python"
-    },
-    {
       "src": "maximos_invitation/wsgi.py",
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "15mb",
+        "maxLambdaSize": "50mb",
         "runtime": "python3.11"
       }
     }
@@ -17,7 +13,7 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/maximos_invitation/static/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
