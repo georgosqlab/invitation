@@ -1,12 +1,14 @@
+from http.server import BaseHTTPRequestHandler
+from maximos_invitation.wsgi import application
 import os
-import sys
-from django.core.wsgi import get_wsgi_application
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'maximos_invitation.settings')
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'maximos_invitation.settings')
+        self.send_response(200)
+        self.send_header('Content-type', 'text/plain')
+        self.end_headers()
+        self.wfile.write(b'Hello from Python on Vercel!')
 
-application = get_wsgi_application()
-
-# Vercel expects a function named "handler"
-def handler(request, context):
-    return application(request, context)
+def vercel_handler(request):
+    return Handler()
