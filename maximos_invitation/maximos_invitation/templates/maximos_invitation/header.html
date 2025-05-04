@@ -1,18 +1,15 @@
 {% block header %}
 <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home"
-        style="background-image: url('https://i.pinimg.com/736x/47/97/32/479732b8954c3bc22cf89a14c9714117.jpg');
-              background-position: center center; background-size: 60% 70%;
+        style="background-image: url('https://i.pinimg.com/736x/67/d1/5f/67d15f07896a040756111aa565661dbf.jpg');
+              background-position: center center; background-size: 100% 100%;
               background-repeat: no-repeat;">
-<!--  <div class="w3-display-middle w3-center w3-animate-opacity">-->
-<!--    <h1 class="w3-jumbo w3-text-white w3-animate-left" style="text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);">-->
-<!--        {{ t.maximos }}-->
-<!--    </h1>-->
-<!--  </div>-->
+<!-- https://i.pinimg.com/736x/67/d1/5f/67d15f07896a040756111aa565661dbf.jpg -->
+<!-- https://i.pinimg.com/736x/47/97/32/479732b8954c3bc22cf89a14c9714117.jpg -->
 
       <div class="w3-display-middle w3-center w3-animate-opacity">
         <h1 style="  color: white;
               font-weight: bold;
-              background-color: lightblue;
+<!--               background-color: lightblue; -->
               padding: 8px 20px;
               display: inline-block;
               text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
@@ -21,22 +18,47 @@
               animation: w3-animate-left 0.4s;">
             {{ t.maximos }}
         </h1>
-      </div>
 
-  <div class="w3-display-bottomright w3-padding" style="position: absolute; bottom: 170px; right: 20px; text-align: right;">
-    <h2 class="w3-text-pink w3-animate-zoom" style="position: relative; right: 90px; text-align: right;
-        font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
-        {{ t.baptism }}
-    </h2>
 
-    <p class="w3-text-pink w3-animate-zoom" style="font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
-        {{ t.celebration }}
-    </p>
+    <div class="w3-animate-bottom" style="margin-top: 20px;">
+            <p style="font-size: 1.8rem;
+                      color: #f0f8ff;
+                      background: rgba(255, 255, 255, 0.2);
+                      padding: 10px 20px;
+                      border-radius: 6px;
+                      display: inline-block;
+                      text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">
+                {{ t.baptism }}
+            </p>
+        </div>
 
-    <h2 class="w3-text-pink w3-animate-zoom" style="font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
-        <b>{{ t.date }}</b>
-    </h2>
-  </div>
+        <div class="w3-animate-bottom" style="margin-top: 5x;">
+            <p style="font-size: 1.4rem;
+                      color: #fffacd;
+                      background: rgba(0, 0, 0, 0.3);
+                      padding: 6px 16px;
+                      border-radius: 6px;
+                      display: inline-block;
+                      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);">
+                {{ t.date }}
+            </p>
+        </div>
+                </div>
+
+<!--   <div class="w3-display-bottomright w3-padding" style="position: absolute; bottom: 170px; right: 20px; text-align: right;"> -->
+<!--     <h2 class="w3-text-pink w3-animate-zoom" style="position: relative; right: 90px; text-align: right; -->
+<!--         font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);"> -->
+<!--         {{ t.baptism }} -->
+<!--     </h2> -->
+
+<!--     <p class="w3-text-pink w3-animate-zoom" style="font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);"> -->
+<!--         {{ t.celebration }} -->
+<!--     </p> -->
+
+<!--     <h2 class="w3-text-pink w3-animate-zoom" style="font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);"> -->
+<!--         <b>{{ t.date }}</b> -->
+<!--     </h2> -->
+<!--   </div> -->
 </header>
 
 <style>

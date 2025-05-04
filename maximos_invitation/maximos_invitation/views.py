@@ -37,6 +37,13 @@ def main_page(request):
             'declining': 'Decline',
             'message_label': 'Message (Optional)',
             'rsvp_closing': 'Georgos, Kiki & Maximos',
+            'intro': 'Hi! My name is Maximos,',
+            'text':'I’m a little bundle of joy with a big smile and lots of giggles. I love exploring the world '
+                   'around me and making everyone laugh. I’m so excited tocelebrate my baptism and I can’t '
+                   'wait to share this special day with all the people I love!',
+            'ceremony': 'Ceremony',
+            'celebration': 'Celebration',
+            'get_directions': 'Get Directions',
         },
         'el': {
             'baptism': 'Βάπτιση',
@@ -65,6 +72,13 @@ def main_page(request):
             'declining': 'Απόρριψη',
             'message_label': 'Μήνυμα (Προαιρετικό)',
             'rsvp_closing': 'Γιώργος, Κική & Μάξιμος',
+            'intro': 'Γεια χαρά! Είμαι ο Μάξιμος,',
+            'text': 'Είμαι ένα μικρός μπόμπιρας χαράς με ένα πλατύ χαμόγελο και μου αρέσει να εξερευνώ τον κόσμο '
+                   'γύρω μου και να κάνω τους πάντες να γελούν. Είμαι τόσο ενθουσιασμένος που γιορτάζω τη βάπτισή μου και δεν μπορώ να '
+                   'περιμένω να μοιραστώ αυτή την ξεχωριστή μέρα με όλους τους ανθρώπους που αγαπώ!',
+            'ceremony': 'Τελετή',
+            'celebration': 'Εορτασμός',
+            'get_directions': 'Τοποθεσία',
         }
     }
 
