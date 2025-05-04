@@ -1,0 +1,104 @@
+<div class="w3-container w3-padding-64 w3-light-blue w3-grayscale-min w3-center" id="baptism">
+  <div class="w3-content">
+    <h1 class="w3-text-grey section-title"><b>{{ t.baptism }}</b></h1>
+    <div class="w3-row-padding w3-margin-top">
+      <div class="w3-half w3-padding">
+        <div class="w3-card w3-white w3-round-large w3-padding-large location-card">
+          <h2 class="w3-text-pink"><i class="fas fa-church"></i> Ceremony</h2>
+          <p class="w3-large">Baptism Ceremony - 19:00</p>
+          <p>St. Nektarios, Pigadia, Xanthi, Greece</p>
+          <div class="w3-padding-16">
+            <a href="https://maps.app.goo.gl/jNn9JgnsaLepyNbp6" class="w3-button w3-light-grey w3-round" target="_blank">
+              <i class="fas fa-map-marker-alt"></i> Get Directions
+            </a>
+          </div>
+          <div id="map" class="w3-round-large" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+
+      <div class="w3-half w3-padding">
+        <div class="w3-card w3-white w3-round-large w3-padding-large location-card">
+          <h2 class="w3-text-pink"><i class="fas fa-glass-cheers"></i> Celebration</h2>
+          <p class="w3-large">Beach party - 21:00</p>
+          <p>Porto Molo Beach Bar, Avdira, Xanthi, Greece</p>
+          <div class="w3-padding-16">
+            <a href="https://maps.app.goo.gl/jNn9JgnsaLepyNbp6" class="w3-button w3-light-grey w3-round" target="_blank">
+              <i class="fas fa-map-marker-alt"></i> Get Directions
+            </a>
+          </div>
+          <div id="map2" class="w3-round-large" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+<script>
+  // Initialize maps with custom icons
+  var churchIcon = L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+
+  var partyIcon = L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-pink.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+
+  // Ceremony Map
+  var map = L.map('map').setView([41.12160410840788, 24.947422183185044], 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  L.marker([41.12160410840788, 24.947422183185044], {icon: churchIcon}).addTo(map)
+    .bindPopup("<b>Ceremony Location</b><br>St. Nektarios Church")
+    .openPopup();
+
+  // Celebration Map
+  var map2 = L.map('map2').setView([40.94554915984124, 24.995014860384703], 16);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map2);
+  L.marker([40.94554915984124, 24.995014860384703], {icon: churchIcon}).addTo(map2)
+    .bindPopup("<b>Celebration Location</b><br>Porto Molo Beach Bar")
+    .openPopup();
+</script>
+
+<style>
+  .location-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+  }
+
+  .location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  }
+
+  .leaflet-container {
+    border-radius: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .w3-half {
+      width: 100% !important;
+      padding: 8px 0 !important;
+    }
+
+    .location-card {
+      margin-bottom: 16px;
+    }
+  }
+</style>

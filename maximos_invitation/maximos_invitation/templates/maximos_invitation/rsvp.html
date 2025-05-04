@@ -1,0 +1,166 @@
+{% block content %}
+<div class="w3-container w3-padding-64 w3-light-grey w3-center" id="rsvp">
+  <div class="w3-content" style="max-width:800px">
+    <h1 class="w3-xxlarge">{{ t.rsvp_title|default:"WE HOPE YOU CAN JOIN US!" }}</h1>
+    <p class="w3-large">{{ t.rsvp_subtitle|default:"Kindly respond by May 31, 2025" }}</p>
+
+    <!-- RSVP Trigger Button -->
+    <button onclick="document.getElementById('rsvpModal').style.display='block'"
+            class="w3-button w3-round-xxlarge w3-pink w3-padding-large w3-large rsvp-btn">
+      {{ t.rsvp }} <i class="fas fa-paper-plane"></i>
+    </button>
+
+    <!-- RSVP Counter -->
+    <div class="w3-padding-32">
+      <div class="w3-panel w3-white w3-round-large w3-padding">
+        <h3>{{ t.rsvp_stats|default:"Celebration Countdown" }}</h3>
+        <div class="w3-row-padding w3-center">
+          <div class="w3-quarter">
+            <span class="w3-xlarge" id="days">-</span><br>
+            {{ t.days|default:"Days" }}
+          </div>
+          <div class="w3-quarter">
+            <span class="w3-xlarge" id="hours">-</span><br>
+            {{ t.hours|default:"Hours" }}
+          </div>
+          <div class="w3-quarter">
+            <span class="w3-xlarge" id="minutes">-</span><br>
+            {{ t.minutes|default:"Minutes" }}
+          </div>
+          <div class="w3-quarter">
+            <span class="w3-xlarge" id="seconds">-</span><br>
+            {{ t.seconds|default:"Seconds" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RSVP Modal -->
+<div id="rsvpModal" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+    <div class="w3-container w3-padding-32 w3-white">
+      <span onclick="document.getElementById('rsvpModal').style.display='none'"
+            class="w3-button w3-display-topright w3-text-grey">&times;</span>
+
+      <h2 class="w3-wide w3-center">{{ t.rsvp_question|default:"WILL YOU JOIN US?" }}</h2>
+      <p class="w3-center">{{ t.rsvp_prompt|default:"We'd love to celebrate with you!" }}</p>
+
+      <form method="POST" action="https://formsubmit.co/georgeorfa90@gmail.com" class="w3-container" id="rsvpForm">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="w3-section">
+          <label><i class="fas fa-user"></i> {{ t.name_label|default:"Your Name(s)" }}</label>
+          <input class="w3-input w3-border" type="text" name="name" required>
+        </div>
+
+        <div class="w3-section">
+          <label><i class="fas fa-envelope"></i> {{ t.email_label|default:"Email" }}</label>
+          <input class="w3-input w3-border" type="email" name="email" required>
+        </div>
+
+        <div class="w3-section">
+          <label><i class="fas fa-users"></i> {{ t.guests_label|default:"Number of Guests" }}</label>
+          <select class="w3-select w3-border" name="guests" required>
+            <option value="" disabled selected>{{ t.select_option|default:"Choose..." }}</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5+</option>
+          </select>
+        </div>
+
+        <div class="w3-section">
+          <label><i class="fas fa-calendar-check"></i> {{ t.attendance_label|default:"Attendance" }}</label>
+          <div class="w3-row">
+            <div class="w3-half w3-padding-small">
+              <button type="submit" name="attendance" value="yes"
+                      class="w3-button w3-block w3-green w3-padding-large">
+                <i class="fas fa-check"></i> {{ t.attending|default:"Accept" }}
+              </button>
+            </div>
+            <div class="w3-half w3-padding-small">
+              <button type="submit" name="attendance" value="no"
+                      class="w3-button w3-block w3-red w3-padding-large">
+                <i class="fas fa-times"></i> {{ t.declining|default:"Decline" }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w3-section">
+          <label><i class="fas fa-comment"></i> {{ t.message_label|default:"Message (Optional)" }}</label>
+          <textarea class="w3-input w3-border" name="message" rows="3"></textarea>
+        </div>
+      </form>
+
+      <div class="w3-panel w3-light-grey w3-leftbar w3-border-grey">
+        <p><i class="fas fa-heart w3-text-pink"></i> <em>{{ t.rsvp_closing|default:"Georgos, Kiki & Maximos" }}</em></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .rsvp-btn {
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .rsvp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  .w3-modal-content {
+    border-radius: 12px;
+  }
+
+  #rsvpForm button[type="submit"] {
+    transition: all 0.3s;
+  }
+
+  #rsvpForm button[type="submit"]:hover {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 600px) {
+    .w3-modal-content {
+      margin: 0 10px;
+    }
+  }
+</style>
+
+<script>
+  // Countdown Timer
+  function updateCountdown() {
+    const eventDate = new Date("August 2, 2025 19:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    if (distance < 0) {
+      clearInterval(countdownTimer);
+      document.getElementById("days").innerHTML = "0";
+      document.getElementById("hours").innerHTML = "0";
+      document.getElementById("minutes").innerHTML = "0";
+      document.getElementById("seconds").innerHTML = "0";
+    }
+  }
+
+  updateCountdown();
+  const countdownTimer = setInterval(updateCountdown, 1000);
+</script>
+
+{% endblock %}
