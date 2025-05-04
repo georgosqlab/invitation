@@ -19,6 +19,7 @@ from .views import main_page, handle_rsvp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', main_page, name='home_page'),  # Add this for root path
     path('maximos/', main_page, name='home_page'),
     path('maximos/rsvp/', handle_rsvp, name='handle_rsvp'),
 ]
