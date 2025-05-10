@@ -39,7 +39,7 @@ def main_page(request):
             'rsvp_closing': 'Georgos, Kiki & Maximos',
             'intro': 'Hi! My name is Maximos,',
             'text':'I’m a little bundle of joy with a big smile and lots of giggles. I love exploring the world '
-                   'around me and making everyone laugh. I’m so excited tocelebrate my baptism and I can’t '
+                   'around me and making everyone laugh. I’m so excited to celebrate my baptism and I can’t '
                    'wait to share this special day with all the people I love!',
             'ceremony': 'Ceremony',
             'celebration': 'Celebration',
