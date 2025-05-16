@@ -5,4 +5,4 @@ from whitenoise import WhiteNoise
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "maximos_invitation.settings")
 
 application = get_wsgi_application()
-application = WhiteNoise(application, root="staticfiles")
+application = WhiteNoise(application, root="static")
