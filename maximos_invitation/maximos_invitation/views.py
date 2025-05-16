@@ -39,8 +39,10 @@ def main_page(request):
             'rsvp_closing': 'Georgos, Kiki & Maximos',
             'intro': 'Hi! My name is Maximos,',
             'text':'I’m a little bundle of joy with a big smile and lots of giggles. I love exploring the world '
-                   'around me and making everyone laugh. I’m so excited to celebrate my baptism and I can’t '
-                   'wait to share this special day with all the people I love!',
+                   'around me and making everyone laugh. I would be very happy to have you by my '
+                   'side to celebrate my baptism on <strong>Saturday, August 2nd, 2025</strong>, at '
+                   'the chapel of <strong>Saint Nektarios in Pigadia, Xanthi</strong>. '
+                   'After the ceremony, I’ll be waiting for you at <strong>Porto Molo in Avdira</strong>.',
             'ceremony': 'Ceremony',
             'celebration': 'Celebration',
             'get_directions': 'Get Directions',
@@ -73,9 +75,11 @@ def main_page(request):
             'message_label': 'Μήνυμα (Προαιρετικό)',
             'rsvp_closing': 'Γιώργος, Κική & Μάξιμος',
             'intro': 'Γεια χαρά! Είμαι ο Μάξιμος,',
-            'text': 'Είμαι ένα μικρός μπόμπιρας χαράς με ένα πλατύ χαμόγελο και μου αρέσει να εξερευνώ τον κόσμο '
-                   'γύρω μου και να κάνω τους πάντες να γελούν. Είμαι τόσο ενθουσιασμένος που γιορτάζω τη βάπτισή μου και δεν μπορώ να '
-                   'περιμένω να μοιραστώ αυτή την ξεχωριστή μέρα με όλους τους ανθρώπους που αγαπώ!',
+            'text': 'Είμαι ένα μικρός μπόμπιρας με ένα πλατύ χαμόγελο και μου αρέσει να εξερευνώ τον κόσμο '
+                   'γύρω μου και να κάνω τους πάντες να γελούν. Θα χαρώ πολύ να είστε κοντά μου '
+                    'και να γιορτάσουμε τη βάπτιση μου το <strong>Σάββατο 2 Αυγούστου 2025</strong> στο παρεκκλησι '
+                    'του <strong>Αγίου Νεκταρίου στα Πηγάδια Ξάνθης</strong>. Μετά το μυστήριο σας περιμένω '
+                    'στο <strong>Πόρτο Μόλο στα Άβδηρα</strong>.',
             'ceremony': 'Τελετή',
             'celebration': 'Εορτασμός',
             'get_directions': 'Τοποθεσία',
