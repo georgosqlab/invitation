@@ -39,7 +39,8 @@ def main_page(request):
             'rsvp_closing': 'Georgos, Kiki & Maximos',
             'intro': 'Hi! My name is Maximos,',
             'text':'I’m a little bundle of joy with a big smile and lots of giggles. I love exploring the world '
-                   'around me and making everyone laugh. I would be very happy to have you by my '
+                   'around me and making everyone laugh.<br><br> '
+                   'I would be very happy to have you by my '
                    'side to celebrate my baptism on <strong>Saturday, August 2nd, 2025</strong>, at '
                    'the chapel of <strong>Saint Nektarios in Pigadia, Xanthi</strong>. '
                    'After the ceremony, I’ll be waiting for you at <strong>Porto Molo in Avdira</strong>.',
@@ -76,7 +77,8 @@ def main_page(request):
             'rsvp_closing': 'Γιώργος, Κική & Μάξιμος',
             'intro': 'Γεια χαρά! Είμαι ο Μάξιμος,',
             'text': 'Είμαι ένα μικρός μπόμπιρας με ένα πλατύ χαμόγελο και μου αρέσει να εξερευνώ τον κόσμο '
-                   'γύρω μου και να κάνω τους πάντες να γελούν. Θα χαρώ πολύ να είστε κοντά μου '
+                   'γύρω μου και να κάνω τους πάντες να γελούν.<br><br> '
+                    'Θα χαρώ πολύ να είστε κοντά μου '
                     'και να γιορτάσουμε τη βάπτιση μου το <strong>Σάββατο 2 Αυγούστου 2025</strong> στο παρεκκλησι '
                     'του <strong>Αγίου Νεκταρίου στα Πηγάδια Ξάνθης</strong>. Μετά το μυστήριο σας περιμένω '
                     'στο <strong>Πόρτο Μόλο στα Άβδηρα</strong>.',
